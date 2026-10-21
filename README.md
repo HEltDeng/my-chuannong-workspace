@@ -4,6 +4,8 @@
 
 ## 直接使用
 
+日常使用请打开下面的 HTTPS 公网地址，无需启动本机服务。不要直接双击 `my-chuannong-backend/admin/index.html`：`file://` 打开的是源文件，无法正确加载服务器上的样式、脚本和登录接口。地址中 `%E6%88%91...` 只是中文文件夹的 URL 编码。
+
 | 入口 | 地址 |
 | --- | --- |
 | 运营后台 | https://chuannong-admin.mychangliapp.cn/admin/ |
