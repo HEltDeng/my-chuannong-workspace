@@ -28,14 +28,20 @@ call(api, '/ready')
 login = call(admin, '/api/v1/auth/login', 'POST', {'username': credentials['adminUsername'], 'password': credentials['adminPassword']})
 token = login['token']
 try:
-    assert call(api, '/api/v1/auth/me', token=token)['role'] == 'ADMIN'
-    call(admin, '/api/v1/admin/overview', token=token)
-    assert call(admin, '/api/v1/admin/resources', token=token) == []
-    assert call(admin, '/api/v1/admin/announcements', token=token) == []
-    admins = call(admin, '/api/v1/admin/admins', token=token)
-    assert len(admins) == 1 and admins[0]['username'] == credentials['adminUsername']
+    identity = call(api, '/api/v1/auth/me', token=token)
+    assert identity['role'] == 'ADMIN'
+    pending_setup = bool(identity.get('adminSetupRequired'))
+    if pending_setup:
+        assert call(admin, '/api/v1/admin/account/setup', token=token)['setupRequired']
+    else:
+        call(admin, '/api/v1/admin/overview', token=token)
+        assert call(admin, '/api/v1/admin/resources', token=token) == []
+        assert call(admin, '/api/v1/admin/announcements', token=token) == []
+        admins = call(admin, '/api/v1/admin/admins', token=token)
+        assert len(admins) == 1 and admins[0]['username'] == credentials['adminUsername']
 finally:
     call(admin, '/api/v1/auth/logout', 'POST', {}, token=token)
 output = Path(__file__).resolve().parents[1] / 'outputs/live-verification.json'
 output.write_text(json.dumps(results, ensure_ascii=False, indent=2) + '\n')
-print(f'{len(results)} deployed HTTPS/API checks passed; administrator login/logout verified; resource and announcement lists are empty.')
+print(f'{len(results)} deployed HTTPS/API checks passed; administrator login/logout verified.')
+print('Owner setup is ready; no credentials were changed.' if pending_setup else 'Resource and announcement lists are empty.')
