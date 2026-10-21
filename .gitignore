@@ -1,0 +1,11 @@
+.work/
+outputs/
+my-chuannong-android/
+my-chuannong-backend/
+*.jks
+*.keystore
+*.pem
+*.key
+*.env
+signing.properties
+credentials*.json
