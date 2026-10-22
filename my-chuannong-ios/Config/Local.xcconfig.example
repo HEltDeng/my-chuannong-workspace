@@ -1,0 +1,4 @@
+// Copy outside source control; never paste signing credentials here.
+// iOS requires its own AMap iOS SDK key bound to com.mychuannong.app.
+DEVELOPMENT_TEAM =
+AMAP_IOS_API_KEY =

@@ -1,0 +1,35 @@
+// !$*UTF8*$!
+{
+ archiveVersion = 1;
+ classes = {};
+ objectVersion = 77;
+ objects = {
+  200000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementStore.swift; sourceTree = "<group>"; };
+  300000000000000000000001 = {isa = PBXBuildFile; fileRef = 200000000000000000000001; };
+  200000000000000000000002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuannongDevelopmentApp.swift; sourceTree = "<group>"; };
+  300000000000000000000002 = {isa = PBXBuildFile; fileRef = 200000000000000000000002; };
+  200000000000000000000003 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesView.swift; sourceTree = "<group>"; };
+  300000000000000000000003 = {isa = PBXBuildFile; fileRef = 200000000000000000000003; };
+  200000000000000000000004 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+  300000000000000000000004 = {isa = PBXBuildFile; fileRef = 200000000000000000000004; };
+  200000000000000000000005 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementFeedState.swift; sourceTree = "<group>"; };
+  300000000000000000000005 = {isa = PBXBuildFile; fileRef = 200000000000000000000005; };
+  100000000000000000000001 = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 2660; LastUpgradeCheck = 2660; }; buildConfigurationList = 10000000000000000000000A; compatibilityVersion = "Xcode 16.0"; developmentRegion = "zh-Hans"; hasScannedForEncodings = 0; knownRegions = ("zh-Hans", en, Base); mainGroup = 100000000000000000000002; preferredProjectObjectVersion = 77; productRefGroup = 100000000000000000000005; projectDirPath = ""; projectRoot = ""; targets = (100000000000000000000006); };
+  100000000000000000000002 = {isa = PBXGroup; children = (100000000000000000000003, 100000000000000000000004, 100000000000000000000005); sourceTree = "<group>"; };
+  100000000000000000000003 = {isa = PBXGroup; children = (200000000000000000000001, 200000000000000000000002, 200000000000000000000003); path = App; sourceTree = "<group>"; };
+  100000000000000000000004 = {isa = PBXGroup; children = (200000000000000000000004, 200000000000000000000005); name = ChuannongCore; path = Core/Sources/ChuannongCore; sourceTree = "<group>"; };
+  100000000000000000000005 = {isa = PBXGroup; children = (100000000000000000000007); name = Products; sourceTree = "<group>"; };
+  100000000000000000000006 = {isa = PBXNativeTarget; buildConfigurationList = 10000000000000000000000B; buildPhases = (100000000000000000000008, 100000000000000000000009, 100000000000000000000010); buildRules = (); dependencies = (); name = MyChuannongDevelopment; packageProductDependencies = (); productName = MyChuannongDevelopment; productReference = 100000000000000000000007; productType = "com.apple.product-type.application"; };
+  100000000000000000000007 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyChuannongDevelopment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+  100000000000000000000008 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (300000000000000000000001, 300000000000000000000002, 300000000000000000000003, 300000000000000000000004, 300000000000000000000005); runOnlyForDeploymentPostprocessing = 0; };
+  100000000000000000000009 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+  100000000000000000000010 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+  10000000000000000000000A = {isa = XCConfigurationList; buildConfigurations = (10000000000000000000000C, 10000000000000000000000D); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+  10000000000000000000000B = {isa = XCConfigurationList; buildConfigurations = (10000000000000000000000E, 10000000000000000000000F); defaultConfigurationIsVisible = 0; defaultConfigurationName = Debug; };
+  10000000000000000000000C = {isa = XCBuildConfiguration; buildSettings = {CLANG_ENABLE_MODULES = YES; DEBUG_INFORMATION_FORMAT = dwarf; ENABLE_TESTABILITY = YES; ENABLE_PREVIEWS = YES; ONLY_ACTIVE_ARCH = YES; GCC_OPTIMIZATION_LEVEL = 0; SDKROOT = iphoneos; SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)"; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; SWIFT_VERSION = 6.0; IPHONEOS_DEPLOYMENT_TARGET = 17.0; }; name = Debug; };
+  10000000000000000000000D = {isa = XCBuildConfiguration; buildSettings = {CLANG_ENABLE_MODULES = YES; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_VERSION = 6.0; IPHONEOS_DEPLOYMENT_TARGET = 17.0; }; name = Release; };
+  10000000000000000000000E = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "我的川农开发"; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UILaunchScreen_Generation = YES; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"; INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"; MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = com.mychuannong.app.development; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_STRICT_CONCURRENCY = complete; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Debug; };
+  10000000000000000000000F = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = YES; INFOPLIST_KEY_CFBundleDisplayName = "我的川农开发"; INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES; INFOPLIST_KEY_UILaunchScreen_Generation = YES; MARKETING_VERSION = 0.1.0; PRODUCT_BUNDLE_IDENTIFIER = com.mychuannong.app.development; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_STRICT_CONCURRENCY = complete; TARGETED_DEVICE_FAMILY = "1,2"; }; name = Release; };
+ };
+ rootObject = 100000000000000000000001;
+}
