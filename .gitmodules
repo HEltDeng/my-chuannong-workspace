@@ -7,3 +7,6 @@
 [submodule "my-chuannong-backend"]
 	path = my-chuannong-backend
 	url = https://github.com/HEltDeng/my-chuannong-backend.git
+[submodule "my-chuannong-server-auth"]
+	path = my-chuannong-server-auth
+	url = https://github.com/HEltDeng/my-chuannong-server-auth.git
