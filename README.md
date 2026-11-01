@@ -166,3 +166,7 @@ sudo systemctl list-timers mychuannong-backup.timer certbot.timer
 两个源码目录均建立了 `codex/macos-deployment` 本地 Git 快照并设置原仓库地址。它们不是携带完整历史的 clone，本次未修改 GitHub。未来需要推送改动时，应在 GitHub Git 凭据可用后获取原历史，基于原分支应用本地变更；不要将独立快照历史强推覆盖远端。
 
 最初部署调整了管理页面的环境文案；随后按所有者要求增加一次性超级管理员账号设置、旧会话撤销及相应测试。角色与板块权限模型保持原样，详见后台 `docs/2026-10-21-initial-admin-setup.md`。本目录另有独立 Git 用于保存开发与部署脚本；嵌套源码、凭据、构建输出和运行数据均不纳入它的提交。
+
+## 当前源码同步
+
+2026-11-01 的完整克隆、构建与外部配置说明见 [SOURCE_STATE.md](SOURCE_STATE.md)。如本文保留早期冻结版本或交付分支描述，以本次源码接手说明及实际检出的提交为准。
