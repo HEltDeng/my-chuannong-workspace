@@ -1,4 +1,0 @@
-// Production identifiers and credentials are independent of the development app.
-APP_GROUP_IDENTIFIER = group.com.mychuannong.app
-AMAP_IOS_API_KEY =
-#include? "Release.local.xcconfig"

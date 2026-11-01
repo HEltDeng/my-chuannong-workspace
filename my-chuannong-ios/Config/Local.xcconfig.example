@@ -1,5 +1,0 @@
-// Copy to Config/Local.xcconfig (ignored). Do not commit keys or signing data.
-// The development key must be an iOS key bound to com.mychuannong.app.development.
-DEVELOPMENT_TEAM =
-AMAP_IOS_API_KEY =
-APP_GROUP_IDENTIFIER = group.com.mychuannong.app.development

@@ -1,5 +1,0 @@
-// Copy to Release.local.xcconfig (ignored) or include a private file outside Git.
-// Configure the organization's team after Apple Developer enrollment.
-DEVELOPMENT_TEAM =
-// Use a separate iOS AMap key registered for com.mychuannong.app.
-AMAP_IOS_API_KEY =

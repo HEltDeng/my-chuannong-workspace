@@ -1,0 +1,9 @@
+[submodule "my-chuannong-ios"]
+	path = my-chuannong-ios
+	url = https://github.com/HEltDeng/my-chuannong-ios.git
+[submodule "my-chuannong-android"]
+	path = my-chuannong-android
+	url = https://github.com/HEltDeng/my-chuannong-android.git
+[submodule "my-chuannong-backend"]
+	path = my-chuannong-backend
+	url = https://github.com/HEltDeng/my-chuannong-backend.git
