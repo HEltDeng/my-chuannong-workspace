@@ -1,0 +1,190 @@
+{
+  "navigation": [
+    {
+      "id": "logistics_repair",
+      "actionId": "logistics_repair",
+      "title": "后勤报修",
+      "iconKey": "build",
+      "order": 105,
+      "section": "life",
+      "visible": true
+    },
+    {
+      "id": "schedule",
+      "actionId": "schedule",
+      "title": "课表",
+      "iconKey": "calendar",
+      "order": 10,
+      "section": "learning",
+      "visible": true
+    },
+    {
+      "id": "grade",
+      "actionId": "grade",
+      "title": "成绩查询",
+      "iconKey": "assessment",
+      "order": 20,
+      "section": "learning",
+      "visible": true
+    },
+    {
+      "id": "errand",
+      "actionId": "errand",
+      "title": "跑腿代取",
+      "iconKey": "local_shipping",
+      "order": 55,
+      "section": "life",
+      "visible": true
+    },
+    {
+      "id": "electric",
+      "actionId": "electric",
+      "title": "电费查询",
+      "iconKey": "electric",
+      "order": 50,
+      "section": "life",
+      "visible": true
+    },
+    {
+      "id": "exam",
+      "actionId": "exam",
+      "title": "考试安排",
+      "iconKey": "event_note",
+      "order": 60,
+      "section": "learning",
+      "visible": true
+    },
+    {
+      "id": "cet",
+      "actionId": "cet",
+      "title": "四六级",
+      "iconKey": "abc",
+      "order": 70,
+      "section": "learning",
+      "visible": true
+    },
+    {
+      "id": "lost_found",
+      "actionId": "lost_found",
+      "title": "失物招领",
+      "iconKey": "find_in_page",
+      "order": 80,
+      "section": "life",
+      "visible": true,
+      "featureKey": "lost_found"
+    },
+    {
+      "id": "document",
+      "actionId": "document",
+      "title": "资料库",
+      "iconKey": "folder",
+      "order": 90,
+      "section": "learning",
+      "visible": true,
+      "featureKey": "resource_library"
+    },
+    {
+      "id": "mandarin",
+      "actionId": "mandarin",
+      "title": "普通话测试",
+      "iconKey": "record_voice_over",
+      "order": 100,
+      "section": "learning",
+      "visible": true
+    },
+    {
+      "id": "ncre",
+      "actionId": "ncre",
+      "title": "计算机考试",
+      "iconKey": "computer",
+      "order": 110,
+      "section": "learning",
+      "visible": true
+    },
+    {
+      "id": "comprehensive_score",
+      "actionId": "comprehensive_score",
+      "title": "综测成绩",
+      "iconKey": "assessment",
+      "order": 120,
+      "section": "learning",
+      "visible": true
+    },
+    {
+      "id": "weekly_attendance",
+      "actionId": "weekly_attendance",
+      "title": "周点名",
+      "iconKey": "how_to_reg",
+      "order": 90,
+      "section": "life",
+      "visible": true
+    },
+    {
+      "id": "holiday_destination",
+      "actionId": "holiday_destination",
+      "title": "节假日去向",
+      "iconKey": "luggage",
+      "order": 100,
+      "section": "life",
+      "visible": true
+    },
+    {
+      "id": "driving_school",
+      "actionId": "driving_school",
+      "title": "驾校",
+      "iconKey": "directions_car",
+      "order": 10,
+      "section": "off_campus",
+      "visible": true,
+      "featureKey": null,
+      "url": null
+    },
+    {
+      "id": "ielts_toefl",
+      "actionId": "ielts_toefl",
+      "title": "雅思托福",
+      "iconKey": "abc",
+      "order": 20,
+      "section": "off_campus",
+      "visible": true,
+      "featureKey": null,
+      "url": null
+    },
+    {
+      "id": "civil_postgrad",
+      "actionId": "civil_postgrad",
+      "title": "考公考研",
+      "iconKey": "menu_book",
+      "order": 30,
+      "section": "off_campus",
+      "visible": true,
+      "featureKey": null,
+      "url": null
+    },
+    {
+      "id": "gym",
+      "actionId": "gym",
+      "title": "健身房",
+      "iconKey": "fitness_center",
+      "order": 40,
+      "section": "off_campus",
+      "visible": true,
+      "featureKey": null,
+      "url": null
+    },
+    {
+      "id": "secondhand",
+      "actionId": "secondhand",
+      "title": "二手好物",
+      "iconKey": "shopping_bag",
+      "order": 60,
+      "section": "life",
+      "visible": true,
+      "featureKey": null,
+      "url": null
+    }
+  ],
+  "cards": [],
+  "resources": [],
+  "remotePages": []
+}

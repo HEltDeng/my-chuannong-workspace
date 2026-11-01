@@ -1,0 +1,264 @@
+{
+  "schemaVersion": 1,
+  "school": "sicau",
+  "academicYear": "2026-2027",
+  "version": "sicau-2026-2027-1",
+  "validationStatus": "verified",
+  "sourcePage": "https://www.sicau.edu.cn/ggfw/rlxl.htm",
+  "sourceResources": [
+    {
+      "url": "https://www.sicau.edu.cn/__local/0/33/9D/9D011F3C00842F62859A822F5BF_8527CD2C_19F84.png",
+      "sha256": "63cf49c87caedd6ff18762f1348e8c16141565831d4ff0fc7524b7ad966dbae8"
+    },
+    {
+      "url": "https://www.sicau.edu.cn/__local/4/36/81/3613DA180EFF9DD4453671F6573_A5CED4D5_54F12.png",
+      "sha256": "95b193158464d448658bc97b4aa87f067a4f1b0cce25078078d9c35428179eca"
+    }
+  ],
+  "checkedAt": "2026-10-03T00:00:00+08:00",
+  "schoolPublishedAt": null,
+  "checkIntervalHours": 24,
+  "terms": [
+    {
+      "semesterCode": "2026-2027-1",
+      "title": "2026—2027学年",
+      "subtitle": "第一学期",
+      "calendarStart": "2026-08-01",
+      "calendarEnd": "2027-02-25",
+      "semesterStart": "2026-09-07",
+      "semesterEnd": "2027-01-24",
+      "events": [
+        {
+          "name": "开学上班",
+          "type": "opening",
+          "start": "2026-09-04",
+          "end": "2026-09-04",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "报到注册",
+          "type": "registration",
+          "start": "2026-09-04",
+          "end": "2026-09-06",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "正式行课",
+          "type": "teaching",
+          "start": "2026-09-07",
+          "end": "2026-09-07",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "实践周",
+          "type": "practice",
+          "start": "2027-01-18",
+          "end": "2027-01-24",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "寒假",
+          "type": "vacation",
+          "start": "2027-01-18",
+          "end": "2027-02-25",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "教师节",
+          "type": "festival",
+          "start": "2026-09-10",
+          "end": "2026-09-10",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "中秋节",
+          "type": "festival",
+          "start": "2026-09-25",
+          "end": "2026-09-25",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "国庆节",
+          "type": "festival",
+          "start": "2026-10-01",
+          "end": "2026-10-01",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "元旦",
+          "type": "festival",
+          "start": "2027-01-01",
+          "end": "2027-01-01",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        }
+      ],
+      "notes": [],
+      "customWeekRanges": [],
+      "weekRule": "MONDAY_CONTINUOUS",
+      "teachingWeeks": 20,
+      "sourceResource": "https://www.sicau.edu.cn/__local/0/33/9D/9D011F3C00842F62859A822F5BF_8527CD2C_19F84.png",
+      "sourceFingerprint": "63cf49c87caedd6ff18762f1348e8c16141565831d4ff0fc7524b7ad966dbae8",
+      "dataVersion": "sicau-2026-2027-1"
+    },
+    {
+      "semesterCode": "2026-2027-2",
+      "title": "2026—2027学年",
+      "subtitle": "第二学期",
+      "calendarStart": "2027-02-01",
+      "calendarEnd": "2027-07-31",
+      "semesterStart": "2027-03-01",
+      "semesterEnd": "2027-07-18",
+      "events": [
+        {
+          "name": "开学上班",
+          "type": "opening",
+          "start": "2027-02-26",
+          "end": "2027-02-26",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "报到注册",
+          "type": "registration",
+          "start": "2027-02-26",
+          "end": "2027-02-28",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "正式行课",
+          "type": "teaching",
+          "start": "2027-03-01",
+          "end": "2027-03-01",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "实践周",
+          "type": "practice",
+          "start": "2027-07-12",
+          "end": "2027-07-18",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "暑假开始",
+          "type": "vacation_start",
+          "start": "2027-07-12",
+          "end": "2027-07-12",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "春节",
+          "type": "festival",
+          "start": "2027-02-06",
+          "end": "2027-02-06",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "妇女节",
+          "type": "festival",
+          "start": "2027-03-08",
+          "end": "2027-03-08",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "清明",
+          "type": "festival",
+          "start": "2027-04-05",
+          "end": "2027-04-05",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "劳动节",
+          "type": "festival",
+          "start": "2027-05-01",
+          "end": "2027-05-01",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "青年节",
+          "type": "festival",
+          "start": "2027-05-04",
+          "end": "2027-05-04",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        },
+        {
+          "name": "端午节",
+          "type": "festival",
+          "start": "2027-06-09",
+          "end": "2027-06-09",
+          "source": "https://www.sicau.edu.cn/ggfw/rlxl.htm"
+        }
+      ],
+      "notes": [],
+      "customWeekRanges": [],
+      "weekRule": "MONDAY_CONTINUOUS",
+      "teachingWeeks": 20,
+      "sourceResource": "https://www.sicau.edu.cn/__local/0/33/9D/9D011F3C00842F62859A822F5BF_8527CD2C_19F84.png",
+      "sourceFingerprint": "63cf49c87caedd6ff18762f1348e8c16141565831d4ff0fc7524b7ad966dbae8",
+      "dataVersion": "sicau-2026-2027-1"
+    }
+  ],
+  "periods": [
+    {
+      "section": 1,
+      "start": "08:10",
+      "end": "08:55",
+      "lecture": 1
+    },
+    {
+      "section": 2,
+      "start": "09:05",
+      "end": "09:50",
+      "lecture": 1
+    },
+    {
+      "section": 3,
+      "start": "10:10",
+      "end": "10:55",
+      "lecture": 2
+    },
+    {
+      "section": 4,
+      "start": "11:05",
+      "end": "11:50",
+      "lecture": 2
+    },
+    {
+      "section": 5,
+      "start": "14:20",
+      "end": "15:05",
+      "lecture": 3
+    },
+    {
+      "section": 6,
+      "start": "15:15",
+      "end": "16:00",
+      "lecture": 3
+    },
+    {
+      "section": 7,
+      "start": "16:20",
+      "end": "17:05",
+      "lecture": 4
+    },
+    {
+      "section": 8,
+      "start": "17:15",
+      "end": "18:00",
+      "lecture": 4
+    },
+    {
+      "section": 9,
+      "start": "19:30",
+      "end": "20:15",
+      "lecture": 5
+    },
+    {
+      "section": 10,
+      "start": "20:25",
+      "end": "21:10",
+      "lecture": 5
+    }
+  ],
+  "periodsVersion": "sicau-2026-2027-1",
+  "revisions": [],
+  "contentFingerprint": "7c25eb70e4869035aeaf81927dc960b9e3070ea3aed16570f42b86d0bad9894c"
+}

@@ -49,8 +49,10 @@ public actor APIClient {
               isProductURL(url) else { throw APIError.invalidRoute }
         return url
     }
-    public func request<T: Decodable & Sendable>(_ path: String, method: String = "GET", body: Data? = nil, token: String? = nil) async throws -> T {
-        var request = URLRequest(url: try Self.url(for: path))
+    public func request<T: Decodable & Sendable>(_ path: String, method: String = "GET", body: Data? = nil, token: String? = nil, query: [String: String] = [:]) async throws -> T {
+        var components = URLComponents(url: try Self.url(for: path), resolvingAgainstBaseURL: false)!
+        if !query.isEmpty { components.queryItems = query.sorted { $0.key < $1.key }.map { URLQueryItem(name: $0.key, value: $0.value) } }
+        var request = URLRequest(url: components.url!)
         request.httpMethod = method
         request.httpBody = body
         request.setValue("application/json", forHTTPHeaderField: "Accept")
@@ -58,6 +60,10 @@ public actor APIClient {
         if let token { request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization") }
         let (data, response) = try await session.data(for: request)
         guard let http = response as? HTTPURLResponse else { throw APIError.invalidResponse }
+        if !(200...299).contains(http.statusCode) {
+            let failure = try? JSONDecoder().decode(APIEnvelope<JSONValue>.self, from: data)
+            throw APIError.server(http.statusCode, failure?.error?.message ?? "服务暂不可用")
+        }
         let envelope = try JSONDecoder().decode(APIEnvelope<T>.self, from: data)
         guard (200...299).contains(http.statusCode), envelope.ok, let value = envelope.data else {
             throw APIError.server(http.statusCode, envelope.error?.message ?? "服务暂不可用")
@@ -83,7 +89,10 @@ public struct Announcement: Codable, Identifiable, Hashable, Sendable {
     public let targetUrl: String?
     public let publishedAt: Int64?
     public let category: String?
-    public static func visible(in feed: [Self]) -> [Self] { feed.filter { $0.type == "ANNOUNCEMENT" } }
+    public let recoverAt: Int64?
+    public let moduleKey: String?
+    public let targetType: String?
+    public static func visible(in feed: [Self]) -> [Self] { feed.filter { ["ANNOUNCEMENT", "MAINTENANCE", "CLOSED"].contains($0.type) } }
     public var imageURL: URL? {
         guard let imageUrl else { return nil }
         let url = URL(string: imageUrl, relativeTo: Product.origin)?.absoluteURL
@@ -103,6 +112,13 @@ public struct AuthUser: Codable, Sendable {
     public let nickname: String
     public let accountType: String
     public let phoneMasked: String?
+    public let accountStatus: String?
+    public let accountStatusReason: String?
+    public let userCode: String?
+    public let phoneVerified: Bool?
+    public let studentId: String?
+    public let realName: String?
+    public let identityStatus: String?
 }
 public struct AuthData: Codable, Sendable { public let token: String; public let user: AuthUser }
 public struct ResourceItem: Decodable, Identifiable, Sendable {
@@ -114,7 +130,7 @@ public struct ResourceItem: Decodable, Identifiable, Sendable {
 
 public enum SchoolURLPolicy {
     public static func allows(_ url: URL) -> Bool {
-        guard url.scheme == "https", let host = url.host?.lowercased(), url.user == nil, url.password == nil else { return false }
+        guard url.scheme == "https", let host = url.host?.lowercased(), url.user == nil, url.password == nil, url.port == nil || url.port == 443 else { return false }
         return host == "sicau.edu.cn" || host.hasSuffix(".sicau.edu.cn")
     }
 }

@@ -1,0 +1,4 @@
+// Local.xcconfig is ignored. Keys and signing credentials stay on this machine.
+APP_GROUP_IDENTIFIER = group.com.mychuannong.app.development
+AMAP_IOS_API_KEY =
+#include? "Local.xcconfig"

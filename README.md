@@ -1,6 +1,8 @@
 # 我的川农 · Mac 开发与腾讯云部署
 
-2026-10-21：Android 与后台源码已下载到本目录，开发依赖已安装，独立后台已在腾讯云上线。正式 APK 尚未生成：按本次安排，等待确认高德 Android Key 后再打包及真机验收。
+2026-10-23：Android 与 iOS 共用生产后台的设备上报、服务内容及运营链路已验证；独立高德 iOS 开发 Key 已配置。安卓通知压缩模型修复包位于 `outputs/dual-platform-20261023/`，保留原签名，仅本机验收，未公开发布。详细通过范围、实际修复与剩余真机限制见 `docs/IOS_MIGRATION.md`。
+
+2026-10-22：企业高德 Android Key 已配置，原 JKS 签名的 Release 测试 APK 已构建并成功安装到 Pixel_8_API_36_1 模拟器。产物位于 `outputs/release-20261022-115112/my川农_chuannong_1.0.0.apk`，版本 1.0.0 / 10。368 项单元测试、Release Lint Vital、APK v2 签名及包信息校验通过；尚未完成地图运行界面与安卓真机验收。用户确认本次仅用于测试，未公开发布。
 
 ## 直接使用
 
@@ -22,7 +24,7 @@
 
 权限保持原有层级：超级管理员管理全部平台账号，并在“运营管理员”中创建、编辑对应板块的管理员；板块管理员只访问所属角色的模块，不能自行扩大权限。首次设置只在已有管理员身份验证后出现，没有公开注册超级管理员的入口。
 
-后台数据库为本产品独立新库：仅有首个超级管理员和必要系统配置；普通用户、公告、资料、二手、失物、商家、预约等业务记录均为空。三项校园指南是空白草稿编辑槽，1.0.0 版本也是草稿，更新与强更默认关闭。管理操作会正常产生审计记录。
+初次上线时，后台数据库为本产品独立新库：仅有首个超级管理员和必要系统配置；普通用户、公告、资料、二手、失物、商家、预约等业务记录均为空。三项校园指南是空白草稿编辑槽，1.0.0 版本也是草稿，更新与强更默认关闭。管理操作会正常产生审计记录。
 
 平台账号注册和登录由该 API 处理；学校账号、学校认证及教务数据继续由手机端处理。当前没有迁入旧的测试账号，也没有可继续使用的旧测试账号密码。
 
@@ -60,6 +62,35 @@ cd ../my-chuannong-backend
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
+## Google 官方安卓模拟器
+
+模拟器使用现有 Android SDK，启动时不需要打开 Android Studio。虚拟设备名称为 `Pixel_8_API_36_1`，配置为 Pixel 8、Android 16（API 36.1）、Google APIs、ARM64、4GB 内存、4 核 CPU、8GB 用户数据空间，与本项目的 ARM64 APK 匹配。这是通用安卓虚拟手机，可以安装其他兼容的 Android 应用，并不限于本项目。Google APIs 镜像包含 Google 服务，不包含 Play 商店；开发包通过 ADB 安装。
+
+2026-10-21 已安装官方稳定版 Android Emulator 37.2.12 和系统镜像 revision 4。已验证 CPU 虚拟化加速、首次开机、ADB 连接、系统设置启动、联网、截图、独立于终端运行及桌面入口关闭后重启。验收记录在 `outputs/android-emulator-verification.json`，桌面截图在 `outputs/图片/android-emulator-home.png`。本次只准备测试环境，尚未安装本项目 APK。
+
+2026-10-22 已将入口整理为 `/Applications/Android Emulator.app`，可在访达的“应用程序”中双击打开，不弹出终端，也不依赖本项目文件夹。原虚拟设备已重命名并保留数据。桌面和项目根目录的旧 `.command` 入口已移入 `.work/retired-emulator-launchers/` 留档。
+
+本机文件放置约定：应用入口放在“应用程序”，文档和工作文件放在相应项目目录；不向桌面放置快捷方式、输出文件或临时文件。保留外接磁盘显示选项。
+
+开发时也可以在本目录执行：
+
+```sh
+./scripts/android-emulator.sh start
+./scripts/android-emulator.sh status
+
+# APK 构建完成后安装；路径可以包含空格
+./scripts/android-emulator.sh install '/完整路径/app.apk'
+
+# 指定截图保存位置；调试命令只操作这台虚拟设备
+./scripts/android-emulator.sh screenshot outputs/android-emulator.png
+./scripts/android-emulator.sh adb logcat
+./scripts/android-emulator.sh stop
+```
+
+启动和停止会保留设备中的应用及数据。运行日志在 `~/Library/Logs/Android Emulator/emulator.log`，应用入口日志在同目录 `launcher.log`；未指定路径的截图默认保存到 `~/Pictures/Android Emulator/`。虚拟设备数据位于 `~/.android/avd/Pixel_8_API_36_1.avd/`。源代码、签名私钥与虚拟设备数据分开存放。模拟器用于安装和调试，正式 APK 的签名仍由下方构建脚本完成。
+
+参考：[Google 官方命令行启动与 APK 安装说明](https://developer.android.com/studio/run/emulator-commandline)。
+
 ## 原签名与正式 APK
 
 包名是 `com.mychuannong.app`。JKS 是签名私钥容器，包名是应用标识；要保持原应用身份，两项都需延续。原 JKS 已恢复到稳定路径，私钥和证书校验通过，未创建替代签名。
@@ -69,17 +100,19 @@ cd ../my-chuannong-backend
 - 高德所需签名 SHA-1：`D7:FD:1B:9E:95:EC:C9:99:A6:96:11:6C:DC:54:D2:41:14:97:75:32`
 - 证书 SHA-256：见 `outputs/signing-public-info.json`
 
-确认现有高德 Android Key 绑定上述包名和 SHA-1 后，将 Key 单独保存为：
+2026-10-22 企业认证已完成，已在高德“我的川农”应用下创建“川农Android正式”Key，绑定上述包名与原签名 SHA-1。Key 已单独保存为：
 
 `/Users/heltdeng/.local/share/my-chuannong/signing/amap-release.key`
 
-文件权限设为 `600`。随后从开发根目录运行：
+文件权限为 `600`。`scripts/env.sh` 自动读取 Key，Gradle 在构建时将其注入 `BuildConfig.AMAP_API_KEY`，地图与搜索 SDK 在用户同意后使用；无需把 Key 明文提交到源码。企业认证不等于已取得正式运营许可，用户本次确认仅构建短期、少量测试使用的签名包。
+
+从开发根目录运行：
 
 ```sh
 ./scripts/build-release.sh
 ```
 
-脚本会按源码原有发布门禁构建 1.0.0（versionCode 10），验证包名与原证书，并在 `outputs/release-时间/` 写入 APK 和交付清单。Key 尚未提供时会明确停止，不生成缺失服务配置的正式包。完成后仍需安卓真机验收登录、地图及更新流程。
+脚本按源码原有发布门禁构建 1.0.0（versionCode 10），验证包名与原证书，并在 `outputs/release-时间/` 写入 APK 和交付清单。缺少 Key 时仍会明确停止。本次产物与验证结果见 `outputs/release-20261022-115112/` 中的 `delivery-manifest.json`、`verification.json` 与 `SHA256SUMS`；最终 APK 已核对包含企业 Key 和正式 HTTPS API。仍需安卓真机验收登录、地图及更新流程。
 
 ## 已完成的验证
 
