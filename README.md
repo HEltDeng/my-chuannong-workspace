@@ -32,6 +32,7 @@
 
 - Android：`my-chuannong-android/`
 - Python 后台与管理页面：`my-chuannong-backend/`
+- 官网（本地制作）：`my-chuannong-website/`，启动方式见其 [README](my-chuannong-website/README.md)。
 - 开发和部署辅助脚本：`scripts/`
 - 非敏感验收记录与截图：`outputs/`
 - 临时过程文件和日志：`.work/`

@@ -10,3 +10,6 @@
 [submodule "my-chuannong-server-auth"]
 	path = my-chuannong-server-auth
 	url = https://github.com/HEltDeng/my-chuannong-server-auth.git
+[submodule "my-chuannong-website"]
+	path = my-chuannong-website
+	url = https://github.com/HEltDeng/my-chuannong-website.git
