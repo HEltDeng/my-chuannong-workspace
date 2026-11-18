@@ -1,5 +1,7 @@
 # 我的川农 · Mac 开发与腾讯云部署
 
+2026-11-18：Android 工作版本 1.0.1（11）已同步最新 iOS 的内容移除、协议、学校首次登录和无短信手机号账号流程。原签名本地验收 APK 位于 `outputs/android-ios-sync-20261118/交付成品/`，383项单测、12项模拟器设备测试、3项本机后台密码账号集成测试、Release/Lint/签名检查通过。已从安卓移除校园地图、高德和平台短信，不再需要地图 Key；当前构建协议为2026-11-17.1、收据10。详见 `my-chuannong-android/docs/handoff/2026-11-18-ios-alignment.md`。未公开发布或部署生产。
+
 2026-10-23：Android 与 iOS 共用生产后台的设备上报、服务内容及运营链路已验证；独立高德 iOS 开发 Key 已配置。安卓通知压缩模型修复包位于 `outputs/dual-platform-20261023/`，保留原签名，仅本机验收，未公开发布。详细通过范围、实际修复与剩余真机限制见 `docs/IOS_MIGRATION.md`。
 
 2026-10-22：企业高德 Android Key 已配置，原 JKS 签名的 Release 测试 APK 已构建并成功安装到 Pixel_8_API_36_1 模拟器。产物位于 `outputs/release-20261022-115112/my川农_chuannong_1.0.0.apk`，版本 1.0.0 / 10。368 项单元测试、Release Lint Vital、APK v2 签名及包信息校验通过；尚未完成地图运行界面与安卓真机验收。用户确认本次仅用于测试，未公开发布。
